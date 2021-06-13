@@ -1,4 +1,4 @@
-let canvas = document.getElementById("main-frame");
+let canvas = document.getElementById("canvas");
 
 window.addEventListener("load", init, false);
 
@@ -10,8 +10,8 @@ let minExtent;
 let circles = new Map();
 
 function init() {
-	windowWidth = window.innerWidth * pixelRatio;
-	windowHeight = window.innerHeight * pixelRatio;
+	windowWidth = window.innerWidth;
+	windowHeight = window.innerHeight;
 	minExtent = Math.min(windowWidth, windowHeight);
 
 	canvas.width = windowWidth;

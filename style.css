@@ -6,8 +6,10 @@ body {
 	background-color: white;
 }
 
-#main-frame {
+#canvas {
 	height: 100%;
 	width: 100%;
 	object-fit: contain;
+	display: block;
+	position: absolute;
 }
