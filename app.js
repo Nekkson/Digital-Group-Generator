@@ -3,19 +3,19 @@ let canvas = document.getElementById("main-frame");
 window.addEventListener("load", init, false);
 
 const pixelRatio = window.devicePixelRatio || 1;
-let screenWidth;
-let screenHeight;
+let windowWidth;
+let windowHeight;
 let minExtent;
 
 let circles = new Map();
 
 function init() {
-	screenWidth = screen.width * pixelRatio;
-	screenHeight = screen.height * pixelRatio;
-	minExtent = Math.min(screenWidth, screenHeight);
+	windowWidth = window.innerWidth * pixelRatio;
+	windowHeight = window.innerHeight * pixelRatio;
+	minExtent = Math.min(windowWidth, windowHeight);
 
-	canvas.width = screenWidth;
-	canvas.height = screenHeight;
+	canvas.width = windowWidth;
+	canvas.height = windowHeight;
 
 	canvas.ontouchstart = handleTouchStart;
 	canvas.ontouchend = handleTouchEnd;
@@ -52,7 +52,7 @@ function handleKeyDown(event) {
 		return;
 	}
 	let pressedKey = String.fromCharCode(event.keyCode);
-	let circle = new Circle(pressedKey, Math.random() * screenWidth, Math.random() * screenHeight, 30 * pixelRatio);
+	let circle = new Circle(pressedKey, Math.random() * windowWidth, Math.random() * windowHeight, 30 * pixelRatio);
 	circles.set(pressedKey, circle);
 
 	keyDown[event.keyCode] = true;
