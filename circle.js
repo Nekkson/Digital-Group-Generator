@@ -1,5 +1,5 @@
 class Circle {
-	constructor(touchId, x, y, radius, color = new Color()) {
+	constructor(touchId, x = 0, y = 0, radius = 30, color = new Color()) {
 		this.touchId = touchId;
 		this.x = x;
 		this.y = y;
